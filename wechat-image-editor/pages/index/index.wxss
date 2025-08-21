@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx;
+}
+
+.image-display {
+  width: 100%;
+  height: 500rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.controls {
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.control text {
+  width: 120rpx;
+}
+
+.control slider {
+  flex: 1;
+}

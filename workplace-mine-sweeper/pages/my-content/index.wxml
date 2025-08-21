@@ -1,0 +1,27 @@
+<!--pages/my-content/index.wxml-->
+<view class="container">
+  <!-- Exposures List -->
+  <block wx:if="{{pageType === 'exposures'}}">
+    <view class="review-list" wx:if="{{items.length > 0}}">
+      <view class="review-item" wx:for="{{items}}" wx:key="id">
+        <text class="review-text">{{item.text}}</text>
+        <text class="review-rating">评分: {{item.rating}}</text>
+      </view>
+    </view>
+    <view class="empty-state" wx:else>
+      <text>你还没有发布过任何曝光</text>
+    </view>
+  </block>
+
+  <!-- Recommendations List -->
+  <block wx:if="{{pageType === 'recommendations'}}">
+    <view class="company-list" wx:if="{{items.length > 0}}">
+      <view class="company-item" wx:for="{{items}}" wx:key="id">
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+    <view class="empty-state" wx:else>
+      <text>你还没有发布过任何推荐</text>
+    </view>
+  </block>
+</view>

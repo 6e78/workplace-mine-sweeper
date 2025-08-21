@@ -1,0 +1,44 @@
+<!--pages/me/index.wxml-->
+<view class="container">
+  <!-- User Profile -->
+  <view class="profile-section">
+    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+    <view class="nickname">{{userInfo.nickName}}</view>
+  </view>
+
+  <!-- Stats -->
+  <view class="stats-section">
+    <view class="stat-item">
+      <view class="stat-value">{{stats.exposures}}</view>
+      <view class="stat-label">我的曝光</view>
+    </view>
+    <view class="stat-item">
+      <view class="stat-value">{{stats.recommendations}}</view>
+      <view class="stat-label">我的推荐</view>
+    </view>
+    <view class="stat-item">
+      <view class="stat-value">{{stats.collections}}</view>
+      <view class="stat-label">我的收藏</view>
+    </view>
+  </view>
+
+  <!-- Menu List -->
+  <view class="menu-section">
+    <view class="menu-item" bindtap="navigateToMyExposures">
+      <text>我的曝光</text>
+      <text class="arrow">></text>
+    </view>
+    <view class="menu-item" bindtap="navigateToMyRecommendations">
+      <text>我的推荐</text>
+      <text class="arrow">></text>
+    </view>
+    <view class="menu-item" bindtap="navigateToMyCollections">
+      <text>我的收藏</text>
+      <text class="arrow">></text>
+    </view>
+    <view class="menu-item" bindtap="navigateToSettings">
+      <text>设置</text>
+      <text class="arrow">></text>
+    </view>
+  </view>
+</view>

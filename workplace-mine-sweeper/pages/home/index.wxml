@@ -1,0 +1,45 @@
+<!--pages/home/index.wxml-->
+<view class="container">
+  <!-- Search Bar -->
+  <view class="search-bar">
+    <input class="search-input" placeholder="面试之前，先照一下" value="{{searchQuery}}" bindinput="onSearchInput" />
+    <button class="search-button" bindtap="onSearch">搜索</button>
+  </view>
+
+  <!-- Expose Button -->
+  <view class="expose-section">
+      <navigator url="/pages/review-create/index" class="expose-button">我要曝光</navigator>
+  </view>
+
+  <!-- Latest Exposures -->
+  <view class="section">
+    <view class="section-title">最新曝光</view>
+    <view class="company-list">
+      <view class="company-item" wx:for="{{latestExposures}}" wx:key="id" bindtap="navigateToCompany" data-id="{{item.id}}">
+        <view class="company-info">
+          <view class="company-name">{{item.company}}</view>
+          <view class="company-tags">
+            <text class="tag" wx:for="{{item.tags}}" wx:key="*this">{{item}}</text>
+          </view>
+        </view>
+        <view class="company-score text-danger">{{item.score}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- Hot Companies -->
+  <view class="section">
+    <view class="section-title">热门避雷</view>
+    <view class="company-list">
+      <view class="company-item" wx:for="{{hotCompanies}}" wx:key="id" bindtap="navigateToCompany" data-id="{{item.id}}">
+        <view class="company-info">
+          <view class="company-name">{{item.company}}</view>
+          <view class="company-tags">
+            <text class="tag" wx:for="{{item.tags}}" wx:key="*this">{{item}}</text>
+          </view>
+        </view>
+        <view class="company-score text-danger">{{item.score}}</view>
+      </view>
+    </view>
+  </view>
+</view>

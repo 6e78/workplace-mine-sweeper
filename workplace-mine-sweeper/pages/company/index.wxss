@@ -1,0 +1,89 @@
+/* pages/company/index.wxss */
+.container {
+  padding: 20rpx;
+}
+
+.header-section {
+  background-color: #fff;
+  padding: 40rpx 20rpx;
+  border-radius: 8rpx;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.company-name {
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.company-city {
+  font-size: 28rpx;
+  color: var(--text-color-secondary);
+  margin-bottom: 30rpx;
+}
+
+.score-label {
+  font-size: 28rpx;
+  color: var(--text-color-secondary);
+}
+
+.score-value {
+  font-size: 80rpx;
+  font-weight: bold;
+  margin-top: 10rpx;
+}
+
+.section {
+  background-color: #fff;
+  padding: 30rpx 20rpx;
+  border-radius: 8rpx;
+  margin-bottom: 30rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15rpx;
+}
+
+.tag-cloud .tag {
+  padding: 8rpx 16rpx;
+  font-size: 26rpx;
+  background-color: #fcefee;
+  color: var(--danger-color);
+  border: 1px solid var(--danger-color);
+  border-radius: 20rpx;
+}
+
+.review-list .review-item {
+  padding: 20rpx 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.review-list .review-item:last-child {
+  border-bottom: none;
+}
+
+.review-author {
+  font-size: 28rpx;
+  font-weight: 500;
+  margin-bottom: 10rpx;
+}
+
+.review-text {
+  font-size: 28rpx;
+  line-height: 1.6;
+  margin-bottom: 10rpx;
+}
+
+.review-rating {
+  font-size: 24rpx;
+  color: var(--text-color-secondary);
+}

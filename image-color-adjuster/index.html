@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Color Adjuster</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Image Color Adjuster</h1>
+    <div class="main-content">
+      <div class="controls">
+        <input type="file" id="upload" accept="image/*">
+        <label for="brightness">Brightness</label>
+        <input type="range" id="brightness" min="0" max="200" value="100">
+        <label for="contrast">Contrast</label>
+        <input type="range" id="contrast" min="0" max="200" value="100">
+        <label for="saturate">Saturation</label>
+        <input type="range" id="saturate" min="0" max="200" value="100">
+        <label for="grayscale">Grayscale</label>
+        <input type="range" id="grayscale" min="0" max="100" value="0">
+        <button id="download">Download Image</button>
+      </div>
+      <div class="image-container">
+        <img id="image" src="" alt="Your Image">
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

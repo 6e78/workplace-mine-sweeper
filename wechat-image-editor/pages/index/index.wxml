@@ -1,0 +1,19 @@
+<view class="container">
+  <button type="primary" bindtap="chooseImage">Upload Image</button>
+  <image wx:if="{{src}}" src="{{src}}" class="image-display" mode="aspectFit"></image>
+  <view wx:if="{{src}}" class="controls">
+    <view class="control">
+      <text>Brightness</text>
+      <slider bindchange="sliderChange" data-filter="brightness" value="100" min="0" max="200"></slider>
+    </view>
+    <view class="control">
+      <text>Contrast</text>
+      <slider bindchange="sliderChange" data-filter="contrast" value="100" min="0" max="200"></slider>
+    </view>
+    <view class="control">
+      <text>Saturation</text>
+      <slider bindchange="sliderChange" data-filter="saturate" value="100" min="0" max="200"></slider>
+    </view>
+  </view>
+  <button wx:if="{{src}}" type="primary" bindtap="saveImage">Save Image</button>
+</view>

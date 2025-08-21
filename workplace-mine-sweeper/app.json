@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/discover/index",
+    "pages/publish/index",
+    "pages/me/index",
+    "pages/company/index",
+    "pages/review-create/index",
+    "pages/post-create/index",
+    "pages/post-detail/index",
+    "pages/my-content/index",
+    "pages/bookmarks/index",
+    "pages/settings/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "职场避雷针",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#0a2a4a",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "assets/images/home.png",
+        "selectedIconPath": "assets/images/home.png"
+      },
+      {
+        "pagePath": "pages/discover/index",
+        "text": "发现",
+        "iconPath": "assets/images/discover.png",
+        "selectedIconPath": "assets/images/discover.png"
+      },
+      {
+        "pagePath": "pages/post-create/index",
+        "text": "发布",
+        "iconPath": "assets/images/publish.png",
+        "selectedIconPath": "assets/images/publish.png"
+      },
+      {
+        "pagePath": "pages/me/index",
+        "text": "我的",
+        "iconPath": "assets/images/me.png",
+        "selectedIconPath": "assets/images/me.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

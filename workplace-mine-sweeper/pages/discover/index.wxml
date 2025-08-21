@@ -1,0 +1,27 @@
+<!--pages/discover/index.wxml-->
+<view class="container">
+  <!-- Recommended Companies -->
+  <view class="section">
+    <view class="section-title">口碑公司排行榜</view>
+    <view class="recommend-list">
+      <view class="recommend-item" wx:for="{{recommendedCompanies}}" wx:key="id" bindtap="navigateToCompany" data-id="{{item.id}}">
+        <view class="company-name">{{item.name}}</view>
+        <view class="company-reason">{{item.tags.join(' | ')}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- Hot Posts -->
+  <view class="section">
+    <view class="section-title">热门交流</view>
+    <view class="post-list">
+      <view class="post-item" wx:for="{{hotPosts}}" wx:key="id" bindtap="navigateToPost" data-id="{{item.id}}">
+        <view class="post-title">{{item.title}}</view>
+        <view class="post-meta">
+          <text class="post-author">{{item.author}}</text>
+          <text class="post-likes">{{item.likes}} 人赞</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

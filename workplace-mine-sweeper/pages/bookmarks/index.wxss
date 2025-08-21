@@ -1,0 +1,14 @@
+/* pages/bookmarks/index.wxss */
+@import "/pages/discover/index.wxss";
+
+.container {
+  padding: 20rpx;
+}
+
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 200rpx;
+  color: #999;
+}

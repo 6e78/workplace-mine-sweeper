@@ -1,0 +1,31 @@
+<view class="container">
+  <button type="primary" bindtap="chooseImage">上传图片</button>
+  
+  <canvas wx:if="{{src}}" 
+          canvas-id="imageCanvas" 
+          class="image-canvas"
+          style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;">
+  </canvas>
+
+  <view wx:if="{{src}}" class="control-panel">
+    <view class="control-item">
+      <text>亮度</text>
+      <slider bindchanging="updateFilter" data-type="brightness" 
+              min="0" max="200" value="{{filters.brightness}}" show-value/>
+    </view>
+    
+    <view class="control-item">
+      <text>对比度</text>
+      <slider bindchanging="updateFilter" data-type="contrast" 
+              min="0" max="200" value="{{filters.contrast}}" show-value/>
+    </view>
+    
+    <view class="control-item">
+      <text>饱和度</text>
+      <slider bindchanging="updateFilter" data-type="saturation" 
+              min="0" max="200" value="{{filters.saturation}}" show-value/>
+    </view>
+
+    <button type="primary" bindtap="saveImage">保存图片</button>
+  </view>
+</view>
