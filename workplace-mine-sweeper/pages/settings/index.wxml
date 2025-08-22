@@ -1,2 +1,17 @@
-<!--pages/settings/index.wxml-->
-<text>pages/settings/index.wxml</text>
+<view class="container">
+  <view class="profile-section">
+    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image class="avatar" src="{{avatarUrl}}"></image>
+    </button>
+    <text class="hint">点击头像进行修改</text>
+  </view>
+
+  <view class="form-section">
+    <view class="form-item">
+      <text class="label">昵称</text>
+      <input class="input" type="nickname" placeholder="请输入昵称" value="{{nickname}}" bind:input="onNicknameInput"/>
+    </view>
+  </view>
+
+  <button class="save-btn" type="primary" bind:tap="saveProfile">保存</button>
+</view>

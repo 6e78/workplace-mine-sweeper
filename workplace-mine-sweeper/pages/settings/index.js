@@ -1,66 +1,63 @@
 // pages/settings/index.js
+const defaultAvatarUrl = '/assets/images/me.png' // 使用一个本地的默认头像
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    avatarUrl: defaultAvatarUrl,
+    nickname: ''
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad(options) {
-
+    // 尝试从本地存储加载用户信息
+    const userInfo = wx.getStorageSync('userInfo');
+    if (userInfo) {
+      this.setData({
+        avatarUrl: userInfo.avatarUrl || defaultAvatarUrl,
+        nickname: userInfo.nickname || ''
+      });
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  onChooseAvatar(e) {
+    const { avatarUrl } = e.detail;
+    this.setData({
+      avatarUrl,
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
+  onNicknameInput(e) {
+    this.setData({
+      nickname: e.detail.value
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
+  saveProfile() {
+    const { avatarUrl, nickname } = this.data;
 
-  },
+    if (!nickname.trim()) {
+      wx.showToast({
+        title: '昵称不能为空',
+        icon: 'none'
+      });
+      return;
+    }
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
+    // 在实际应用中，这里应该将 avatarUrl 上传到您的服务器，
+    // 然后将返回的 URL 和 nickname 一起保存到后端。
+    // 为简化示例，我们仅将信息保存到本地存储。
 
-  },
+    const userInfo = { avatarUrl, nickname };
+    wx.setStorageSync('userInfo', userInfo);
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
+    wx.showToast({
+      title: '保存成功',
+      icon: 'success',
+      duration: 1500
+    });
 
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+    // 1.5秒后自动返回上一页
+    setTimeout(() => {
+      wx.navigateBack();
+    }, 1500);
   }
 })
