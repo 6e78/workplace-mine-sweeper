@@ -1,0 +1,39 @@
+/* pages/my-content/index.wxss */
+.container {
+  padding: 20rpx;
+}
+
+.review-list, .company-list {
+  background-color: #fff;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.review-item, .company-item {
+  padding: 30rpx;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.review-item:last-child, .company-item:last-child {
+  border-bottom: none;
+}
+
+.review-text {
+  display: block;
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.review-rating {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 200rpx;
+  color: #999;
+}

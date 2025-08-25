@@ -1,0 +1,35 @@
+<!--pages/company/index.wxml-->
+<view class="container" wx:if="{{company}}">
+  <!-- Header -->
+  <view class="header-section">
+    <view class="company-name">{{company.name}}</view>
+    <view class="company-city">{{company.city}}</view>
+    <view class="score-wrapper">
+      <view class="score-label">综合避雷指数</view>
+      <view class="score-value text-danger">{{company.overallScore}}</view>
+    </view>
+  </view>
+
+  <!-- Tag Cloud -->
+  <view class="section">
+    <view class="section-title">主要问题</view>
+    <view class="tag-cloud">
+      <text class="tag" wx:for="{{company.tags}}" wx:key="*this">{{item}}</text>
+    </view>
+  </view>
+
+  <!-- Reviews -->
+  <view class="section">
+    <view class="section-title">用户评价</view>
+    <view class="review-list">
+      <view class="review-item" wx:for="{{company.reviews}}" wx:key="id">
+        <view class="review-author">{{item.author}}</view>
+        <view class="review-text">{{item.text}}</view>
+        <view class="review-rating">评分: <text class="text-danger">{{item.rating}}</text></view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:else>
+  <text>加载中...</text>
+</view>

@@ -1,0 +1,30 @@
+<!--pages/post-create/index.wxml-->
+<view class="container">
+  <view class="form-section">
+    <view class="form-group">
+      <label class="form-label">选择话题</label>
+      <picker bindchange="onTopicChange" value="{{topicIndex}}" range="{{topics}}">
+        <view class="picker">
+          {{topics[topicIndex]}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-group">
+      <label class="form-label">帖子标题</label>
+      <input class="form-input" placeholder="给你的帖子起个标题" value="{{title}}" data-field="title" bindinput="onInputChange" />
+    </view>
+
+    <view class="form-group">
+      <label class="form-label">帖子内容</label>
+      <textarea class="form-textarea" placeholder="分享你的见闻和思考..." value="{{content}}" data-field="content" bindinput="onInputChange"></textarea>
+    </view>
+
+    <view class="form-group form-group-inline">
+      <label class="form-label">匿名发布</label>
+      <switch checked="{{isAnonymous}}" bindchange="onAnonymousChange" />
+    </view>
+
+    <button class="submit-button btn-primary" bindtap="onSubmit">发布帖子</button>
+  </view>
+</view>

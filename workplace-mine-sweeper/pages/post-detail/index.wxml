@@ -1,0 +1,53 @@
+<!--pages/post-detail/index.wxml-->
+<view class="container">
+  <!-- 帖子内容 -->
+  <view class="post-container" wx:if="{{post}}">
+    <view class="title">{{post.title}}</view>
+    <view class="meta">
+      <text class="topic">{{post.topic}}</text>
+      <text class="author">{{post.author}}</text>
+    </view>
+    <view class="content">{{post.content}}</view>
+    <view class="actions">
+      <view class="action-button bookmark-button {{post.isBookmarked ? 'bookmarked' : ''}}" bindtap="handleBookmarkPost">
+        <image class="action-icon" src="/assets/images/bookmark{{post.isBookmarked ? '-active' : ''}}.png"></image>
+        <text>收藏</text>
+      </view>
+      <view class="action-button like-button {{post.isLiked ? 'liked' : ''}}" bindtap="handleLikePost">
+        <image class="action-icon" src="/assets/images/like{{post.isLiked ? '-active' : ''}}.png"></image>
+        <text>{{post.likes}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 评论区 -->
+  <view class="comments-section" wx:if="{{comments.length > 0}}">
+    <view class="comments-title">全部评论 ({{comments.length}})</view>
+    <view class="comment-item" wx:for="{{comments}}" wx:key="id">
+      <view class="comment-author">{{item.author}}</view>
+      <view class="comment-content">{{item.content}}</view>
+      <view class="comment-actions">
+        <button class="reply-button" size="mini" bindtap="handleReply" data-comment="{{item}}">回复</button>
+        <view class="action-button like-button {{item.isLiked ? 'liked' : ''}}" bindtap="handleLikeComment" data-index="{{index}}">
+          <image class="action-icon" src="/assets/images/like{{item.isLiked ? '-active' : ''}}.png"></image>
+          <text>{{item.likes}}</text>
+        </view>
+      </view>
+
+      <!-- 回复列表 -->
+      <view class="replies-container" wx:if="{{item.replies && item.replies.length > 0}}">
+        <view class="reply-item" wx:for="{{item.replies}}" wx:for-item="reply" wx:key="id">
+          <view class="reply-author">{{reply.author}} <text class="reply-to-text">回复</text> {{reply.reply_to_author}}</view>
+          <view class="reply-content">{{reply.content}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 评论输入框 -->
+  <view class="comment-input-container">
+    <input class="comment-input" placeholder="{{inputPlaceholder}}" value="{{newComment}}" bindinput="handleCommentInput" focus="{{replyingComment}}"/>
+    <view wx:if="{{replyingComment}}" class="cancel-reply-button" bindtap="cancelReply">取消</view>
+    <button class="submit-button" bindtap="submitComment">发送</button>
+  </view>
+</view>

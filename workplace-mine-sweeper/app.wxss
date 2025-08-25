@@ -1,0 +1,47 @@
+/**app.wxss**/
+page {
+  --main-bg-color: #f0f2f5; /* Light Gray Background */
+  --primary-color: #0a2a4a; /* Dark Blue */
+  --accent-color: #ffc107; /* Yellow Accent/Warning */
+  --danger-color: #d9534f; /* Red for "避雷" elements */
+  --text-color: #333333;
+  --text-color-secondary: #666666;
+  --border-color: #e0e0e0;
+
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', 'Source Han Sans SC', 'Noto Sans CJK SC', 'WenQuanYi Micro Hei', sans-serif;
+}
+
+.container {
+  padding: 20rpx;
+}
+
+/* General Button Style */
+.btn {
+  display: inline-block;
+  padding: 12rpx 24rpx;
+  border-radius: 8rpx;
+  text-align: center;
+  font-size: 28rpx;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: #ffffff;
+}
+
+/* Helper classes */
+.text-danger {
+  color: var(--danger-color);
+}
+
+.text-center {
+  text-align: center;
+}

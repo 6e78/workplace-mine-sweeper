@@ -1,0 +1,47 @@
+<!--pages/review-create/index.wxml-->
+<view class="container">
+  <view class="form-section">
+    <view class="form-group">
+      <label class="form-label">公司全名 (必填)</label>
+      <input class="form-input" placeholder="请输入公司全称" value="{{companyName}}" data-field="companyName" bindinput="onInputChange" />
+    </view>
+    <view class="form-group">
+      <label class="form-label">城市</label>
+      <input class="form-input" placeholder="请输入公司所在城市" value="{{city}}" data-field="city" bindinput="onInputChange" />
+    </view>
+
+    <!-- Ratings -->
+    <view class="form-group">
+      <label class="form-label">HR态度</label>
+      <slider min="1" max="5" show-value data-category="hrAttitude" bindchange="onRateChange"/>
+    </view>
+    <view class="form-group">
+      <label class="form-label">面试过程</label>
+      <slider min="1" max="5" show-value data-category="interviewProcess" bindchange="onRateChange"/>
+    </view>
+    <view class="form-group">
+      <label class="form-label">公司环境</label>
+      <slider min="1" max="5" show-value data-category="companyEnvironment" bindchange="onRateChange"/>
+    </view>
+    <view class="form-group">
+      <label class="form-label">薪资待遇</label>
+      <slider min="1" max="5" show-value data-category="salaryBenefits" bindchange="onRateChange"/>
+    </view>
+
+    <!-- Text Areas -->
+    <view class="form-group">
+      <label class="form-label">避雷点 (必填)</label>
+      <textarea class="form-textarea" placeholder="具体描述遇到的坑..." value="{{reviewText}}" data-field="reviewText" bindinput="onInputChange"></textarea>
+    </view>
+    <view class="form-group">
+      <label class="form-label">面试/工作经历 (必填)</label>
+      <textarea class="form-textarea" placeholder="简要描述你的职位和面试轮次..." value="{{experience}}" data-field="experience" bindinput="onInputChange"></textarea>
+    </view>
+    <view class="form-group">
+      <label class="form-label">给其他求职者的建议</label>
+      <textarea class="form-textarea" placeholder="(选填) ..." value="{{suggestion}}" data-field="suggestion" bindinput="onInputChange"></textarea>
+    </view>
+
+    <button class="submit-button btn-danger" bindtap="onSubmit">提交曝光</button>
+  </view>
+</view>
